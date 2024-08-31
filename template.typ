@@ -104,6 +104,11 @@
         }
     )
 
+    // table setup
+    set table(
+      stroke: none,
+    )
+
     set heading(numbering: "1.")
     counter(page).update(1)
     body
