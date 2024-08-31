@@ -1,16 +1,43 @@
 on: [push]
 
+env:
+  WEEK: "Week-2"
+
 jobs:
   typst_job:
     runs-on: ubuntu-latest
     name: Release document
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Compile doc
         uses: ./.github/actions/typst
-      - name: Upload doc
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: workspace_artifacts
           path: ${{ github.workspace }}
+      - name: Remove pre-existing release
+        run: gh release delete --cleanup-tag $WEEK
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.WEEK }}
+          release_name: Release ${{ env.WEEK }}
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./main.pdf
+          asset_name: T-705_ASDS_LectureNotes.pdf
+          asset_content_type: application/pdf
