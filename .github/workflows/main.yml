@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  typst_job:
+    runs-on: ubuntu-latest
+    name: Release document
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Compile doc
+        uses: ./.github/actions/typst
+      - name: Upload doc
+        uses: actions/upload-artifact@v4
+        with:
+          name: workspace_artifacts
+          path: ${{ github.workspace }}
