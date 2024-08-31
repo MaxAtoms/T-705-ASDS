@@ -1,4 +1,4 @@
-#import "@preview/fletcher:0.5.0" as fletcher: diagram, node, edge
+#import "@preview/fletcher:0.5.1" as fletcher: diagram, node, edge
 
 #let reliabilityExample=diagram(
   //debug: true,
