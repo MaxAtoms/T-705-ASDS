@@ -22,7 +22,8 @@ These are the notes for the Master part of the lecture T-705 Applied Statistics 
 The lectures held together with T-305 Applied Statistics and introduction to Data Science (ASID) are not included.
 
 No guarantee is given for the correctness of the notes.
-Should you find typos, errors or have general suggestions for improvements, you are encouraged to contact me via e-mail: #link("thomas.schoeller@uni-ulm.de").
+Should you find typos, errors or have general suggestions for improvements, please open an issue or pull request in the GitHub repository: https://github.com/MaxAtoms/T-705-ASDS/.
+Alternatively, you can contact me via e-mail: #link("thomas.schoeller@uni-ulm.de").
 
 // TODO Tag Explanation
 // TODO Barron Source
