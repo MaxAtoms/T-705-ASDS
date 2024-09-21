@@ -1,6 +1,91 @@
-#import "../template.typ": example
+#import "../template.typ": example, exercise
 #import "../boxes.typ": definition
 #import "../tags.typ": week, barron
+
+== Continous Distributions
+
+#exercise("4.1")[
+
+  Lifetime in years has density
+
+  $ f(x) = lr("{", size: #350%) #stack($k/x^4, x gt.eq 1$, 1em, $0, x < 1$) $
+
+  Find $k$, the cdf and $P(X>2)$ 
+
+  a) As f is a density we know
+
+  $ 
+  1 &= integral_(-oo)^(oo) f(x) dif x = integral_1^(oo) k/x^4 = k * [ -1/3x^(-3)]_1^(oo) \
+    &= k * (0-(-1/3*1^(-3))) = k/3 <=> k=3
+  $
+
+  b) Find cdf
+
+  $
+  F(x) &= integral_(-oo)^(x) f(t) dif t = integral_1^(x) 3/t^4 dif t = [-t^(-3)]_1^x \
+  &= -x^(-3)-(-1) = 1-x^(-3)
+  $
+
+  $
+  F(x) = lr("{", size: #350%) #stack($1-x^(-3), x gt.eq 1$, 1em, $0, x<1$) 
+  $
+
+  c)
+  $
+  P(X>2) = 1-P(X lt.eq 2) = 1-F(2) = 1-(1-2^(-3)) = 2^(-3) = 1/8
+  $
+]
+
+#pagebreak()
+
+#exercise("4.5")[
+
+  $X$ and $Y$ have the joint density
+
+  $ f(x,y)=C(x^2+y), -1<x<1, 0<y<1 $
+
+  a) Find C
+
+  $
+  1 &= integral_(-oo)^(oo) integral_(-oo)^(oo) C(x^2+y) dif y dif x = integral_(-1)^1 integral_0^1 C(x^2+y) dif y dif x \
+    &= integral_(-1)^1 [ C(x^2y+1/2 y^2) ]_(y=0)^(y=1) dif x = integral_(-1)^1 C(x^2 + 1/2) dif x \
+    &= C[1/3 x^3 + 1/2x]_(-1)^1 = C(1/3+1/2-(-1/3-1/2)) = 5/3 C => C=3/5
+  $
+
+  b) Marginal densities
+
+  $
+  f_X (x) = integral_0^1 f(x,y) dif y = 3/5 integral_0^1 (x^2 + y) dif y = 3/5 [x^2 y + 1/2 y^2]_0^1 = 3/5 (x^2+1/2)
+  $
+
+  $
+  f_Y (y) &= integral_(-1)^1 f(x,y) dif x = 3/5 integral_(-1)^1 (x^2+y) dif x = 3/5 [1/3 x^3 + y x]_(-1)^1 \
+  &= 3/5 (1/3+y-(-1/3-y)) = 3/5 (2/3+2y) = 2/5 + 6/5y
+  $
+
+  c)
+
+  $
+  P(X<0.6) &= integral_0^0.6 f_Y (y) dif y = integral_0^0.6 2/5 + 6/5 y dif y \
+  &= [2/5 y + 6/10 y^2]_0^0.6 = 2/5*3/5 + 6/10*(3/5)^2
+  $
+
+  $
+  P(X<0.6|X<0.5) &= frac(P(Y<0.6 sect X <0.5), P(X<0.5)) \
+  &= frac(integral_0^0.6 integral_0^0.5 f(x,y) dif x dif y, integral_(-1)^0.5 f_X (x) dif x)
+  $
+
+  Bonus: Find the expected value of $X$
+
+  $
+  E(X) &= integral_(-oo)^(oo) x f_X (x) dif x \
+  &= integral_(-1)^1 x * 3/5 (x^2 + 1/2) dif x = 3/5 integral_(-1)^1 x^3 + 1/2 x dif x \
+  &= 3/5 [1/4 x^4 + 1/4 x^2]_(-1)^1 = 3/5 (1/4 + 1/4 - (1/4 + 1/4)) = 0
+  $
+
+]
+
+#pagebreak()
 
 == Parameter Estimation
 #week("5") 
@@ -44,6 +129,8 @@ We estimate parameters of distributions using samples:
 
   The k-th #underline([sample central moment]) $m'_k = 1/n sum_(i=1)^n (X_i - accent(X,macron))^k$ estimates $mu'_k$ from the sample $(X_1,...,X_n)$.
 ]
+
+#pagebreak()
 
 === Method of Moments
 #week("5") 
@@ -100,6 +187,8 @@ To estimate k parameters we equate the first k population moments with the corre
   mu_1 = m_1 &<=> alpha / lambda = accent(X,macron) \ 
   mu_2 = m_2 &<=> alpha / lambda^2 = m'_2
   $
+
+#pagebreak()
 
   We see that:
   $ 

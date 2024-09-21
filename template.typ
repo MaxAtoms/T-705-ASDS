@@ -14,6 +14,11 @@
   ]
 }
 
+#let exercise(number, body) = {
+    strong("Exercise "+number)
+    body
+}
+
 #let project(
     title: none,
     header-title: none,
