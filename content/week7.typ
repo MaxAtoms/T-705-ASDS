@@ -21,7 +21,7 @@ Find parameters of the distribution that maximize the probability that this samp
 
 We have a sample $(X_1,dots,X_n)$ then the joint pmf is:
 $
-P(accent(X, arrow) = (X_1,dots,X_n)) = P(accent(X, arrow)) = P(X_1,dots,X_n) = P(X_1)*dots*P(X_n)
+P(accent(X, arrow) = (X_1,dots,X_n)) = P(accent(X, arrow)) = P(X_1,dots,X_n) = P(X_1) dot.op dots dot.op P(X_n)
 $
 
 Because $accent(X, arrow)$ is a simple random sample the $X_i$ are independent.
@@ -32,7 +32,7 @@ First we take the log of the joint pmf (Because log is a non-decreasing function
 
 $ 
 ln(P(accent(X, arrow))) 
-&= ln(P(X_1)*dots*P(X_n)) \
+&= ln(P(X_1) dot.op dots dot.op P(X_n)) \
 &= ln P(X_1)+dots+ln P(X_n) \ 
 &= sum_(i=1)^n ln P(X_i)
 $
@@ -81,7 +81,7 @@ $
 
 ML method maximizes the probability of $X=x$.
 We know that for continous distributions 
-$ P(x-h < X < x+h) = integral_(x-h)^(x+h) f(y) dif y approx 2h * f(x) $
+$ P(x-h < X < x+h) = integral_(x-h)^(x+h) f(y) dif y approx 2h dot.op f(x) $
 Probability of observing a value close to $x$ is proportional to $f(x)$.
 We can use #underline("the same method").
 
@@ -151,7 +151,7 @@ a) MoM: One parameter $p$ so we only need one moment.
   $
 ]
 
-#exercise("9.5a)")[
+#exercise("9.5 a)")[
 
   Find MoM of $theta$:
   $1/2 (1/theta e^(-x / theta) + 1/10 e^(-x/10))$, $0 < x < oo$

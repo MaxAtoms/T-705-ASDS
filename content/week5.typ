@@ -15,8 +15,8 @@
   a) As f is a density we know
 
   $ 
-  1 &= integral_(-oo)^(oo) f(x) dif x = integral_1^(oo) k/x^4 = k * [ -1/3x^(-3)]_1^(oo) \
-    &= k * (0-(-1/3*1^(-3))) = k/3 <=> k=3
+  1 &= integral_(-oo)^(oo) f(x) dif x = integral_1^(oo) k/x^4 = k dot.op [ -1/3x^(-3)]_1^(oo) \
+    &= k dot.op (0-(-1/3*1^(-3))) = k/3 <=> k=3
   $
 
   b) Find cdf
@@ -67,7 +67,7 @@
 
   $
   P(X<0.6) &= integral_0^0.6 f_Y (y) dif y = integral_0^0.6 2/5 + 6/5 y dif y \
-  &= [2/5 y + 6/10 y^2]_0^0.6 = 2/5*3/5 + 6/10*(3/5)^2
+  &= [2/5 y + 6/10 y^2]_0^0.6 = 2/5 dot.op 3/5 + 6/10 dot.op (3/5)^2
   $
 
   $
@@ -79,7 +79,7 @@
 
   $
   E(X) &= integral_(-oo)^(oo) x f_X (x) dif x \
-  &= integral_(-1)^1 x * 3/5 (x^2 + 1/2) dif x = 3/5 integral_(-1)^1 x^3 + 1/2 x dif x \
+  &= integral_(-1)^1 x dot.op 3/5 (x^2 + 1/2) dif x = 3/5 integral_(-1)^1 x^3 + 1/2 x dif x \
   &= 3/5 [1/4 x^4 + 1/4 x^2]_(-1)^1 = 3/5 (1/4 + 1/4 - (1/4 + 1/4)) = 0
   $
 
@@ -103,9 +103,9 @@ $ text("Bias")(accent(Theta,hat)) = E(accent(Theta,hat) - Theta) $
   Sample mean is an unbiased estimator of the population mean:
 
   $ E(accent(X,macron)) 
-    &= E(frac(X_1+...+X_n,n)) \
-    &= frac(E(X_1)+...+E(X_n),n) \
-    &= frac(mu+...+mu,n) = frac(n*mu,n) = mu
+    &= E(frac(X_1+dots+X_n,n)) \
+    &= frac(E(X_1)+dots+E(X_n),n) \
+    &= frac(mu+dots+mu,n) = frac(n dot.op mu,n) = mu
   $
 ]
 
@@ -199,13 +199,13 @@ To estimate k parameters we equate the first k population moments with the corre
   accent(lambda,hat) &= m_1/m'_2 = accent(X,hat) / m'_2 = 48.2333/679.7122 = 0.0710 \
   accent(alpha,hat) &= accent(lambda,hat) m_1
   = accent(lambda,hat) accent(X,macron)
-  = 0.0710 * 48 2333 = 3.4227
+  = 0.0710 dot.op 48 2333 = 3.4227
   $
 
   The estimates are:
 
   $
-  accent(alpha,hat)  &= accent(lambda,hat) * m_1 = m_1^2/m'_2 \
+  accent(alpha,hat)  &= accent(lambda,hat) dot.op m_1 = m_1^2/m'_2 \
   accent(lambda,hat) &= m_1 / m'_2
   $
 ]

@@ -15,7 +15,7 @@
 #note[
 
 - All concepts can be extended to a vector of random variables \
-  (i.e. $(X_1, X_2,...,X_n)$)
+  (i.e. $(X_1, X_2,dots,X_n)$)
 - The joint distribution is a collection of probabilities for the vector $(X, Y)$ to take the value $(x,y)$
 - Two vectors are equal, i.e. $(X,Y) = (x,y)$, if $X = x$ and $Y = y$
 
@@ -169,7 +169,7 @@ $ P_X (y) = P{Y = y} = sum_x P_((X,Y))(x,y) $
   
     Counterexample:
     $ P_((X,Y)) (0,1) &= 0.2 \
-      P_X (0) P_Y (1) &= 0.5 * 0.3 = 0.15 \
+      P_X (0) P_Y (1) &= 0.5 dot.op 0.3 = 0.15 \
       P_((X,Y)) (0,1) &eq.not P_X (0) P_Y (1) $
 ]
 
