@@ -30,6 +30,10 @@ Alternatively, you can contact me via e-mail: #link("thomas.schoeller@uni-ulm.de
 
 #pagebreak()
 
+#outline(indent:auto, depth:3)
+
+#pagebreak()
+
 #include "content/probability.typ"
 
 // TODO Glossary

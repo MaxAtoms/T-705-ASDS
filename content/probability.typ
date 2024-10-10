@@ -11,3 +11,4 @@
 // No lecture in week 6
 
 #include "week7.typ"
+#include "week8.typ"
