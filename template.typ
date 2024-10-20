@@ -1,21 +1,20 @@
-#let example(body) = {
-  [
-    #strong("Example")
-    
-    #body
-  ]
+#let example(number: "", body) = {
+    strong("Example "+number)
+    linebreak()
+    body
 }
 
 #let note(body) = {
-  [ 
+  [
     #strong("Note")
-    
+    #linebreak()
     #body
   ]
 }
 
 #let exercise(number, body) = {
     strong("Exercise "+number)
+    linebreak()
     body
 }
 
@@ -34,7 +33,7 @@
 
     body
 ) = {
-    set text(font: "Fira Sans", size: 11pt)
+    set text(size: 11pt)
     set par(justify: true)
 
     show link: underline
@@ -64,14 +63,14 @@
         #semester\
         #university\
         #faculty\
-        
+
         #text(size: 0.6em, upper(strong("Lecturer")))\
         #lecturer
-        
+
         #text(size: 0.6em, upper(strong("Author")))\
         #author\
         #email
-        
+
         #datetime.today().display("[year]-[month]-[day]")
         #v(0.1fr)
     ]
@@ -85,7 +84,7 @@
                 #header-title
             ], [], [
                 #show: align.with(top + right)
-                #semester 
+                #semester
             ])
         ] + v(-0.5em) + line(length: 100%, stroke: black),
         footer: {
