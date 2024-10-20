@@ -1,7 +1,7 @@
 on: [push]
 
 env:
-  WEEK: "Week-8"
+  WEEK: "Week-9"
 
 jobs:
   typst_job:
