@@ -13,3 +13,5 @@
 #include "week7.typ"
 #include "week8.typ"
 #include "week9.typ"
+#include "week10.typ"
+#include "week11.typ"
